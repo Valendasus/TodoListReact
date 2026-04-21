@@ -1,4 +1,4 @@
-export default function Field({ className='', label, id, type, onInput, value, ref }) {
+export default function Field({ className='', label, id, type, onInput, value, error, ref }) {
 	return (
     <div className={`field ${className}`}>
       <label
@@ -8,7 +8,7 @@ export default function Field({ className='', label, id, type, onInput, value, r
         {label}
       </label>
       <input
-        className='field__input'
+        className={`field__input ${error ? 'is-invalid': ''}`}
         id={id}
         placeholder=" "
         autoComplete="off"
@@ -17,6 +17,7 @@ export default function Field({ className='', label, id, type, onInput, value, r
         value={value}
         ref={ref}
       />
+      {error && <span className='field__error' title={error}>{error}</span>}
     </div>
 	)
 }
