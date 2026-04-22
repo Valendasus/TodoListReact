@@ -1,3 +1,5 @@
+import './button.css'
+
 export default function Button({ className = '', type='button', children, onClick, isDisabled }) {
 	return (
 		<button 

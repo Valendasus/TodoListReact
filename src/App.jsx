@@ -5,7 +5,7 @@ import TasksPage from './pages/TasksPage'
 const App = () => {
   const routes = {
     '/': TasksPage,
-    '/tasks/123': TaskPage,
+    '/tasks/:id': TaskPage,
     '*': () => <div>404 Page not found XD</div>
   }
 
