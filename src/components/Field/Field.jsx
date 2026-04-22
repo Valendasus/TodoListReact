@@ -1,14 +1,16 @@
+import styles from './Field.module.scss'
+
 export default function Field({ className='', label, id, type, onInput, value, error, ref }) {
 	return (
-    <div className={`field ${className}`}>
+    <div className={`${styles.field} ${className}`}>
       <label
-        className='field__label'
+        className={styles.label}
         htmlFor={id}
       >
         {label}
       </label>
       <input
-        className={`field__input ${error ? 'is-invalid': ''}`}
+        className={`${styles.input} ${error ? styles.isInvalid : ''}`}
         id={id}
         placeholder=" "
         autoComplete="off"
@@ -17,7 +19,7 @@ export default function Field({ className='', label, id, type, onInput, value, e
         value={value}
         ref={ref}
       />
-      {error && <span className='field__error' title={error}>{error}</span>}
+      {error && <span className={styles.error} title={error}>{error}</span>}
     </div>
 	)
 }
